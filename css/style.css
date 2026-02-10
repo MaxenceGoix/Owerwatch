@@ -1,0 +1,87 @@
+/* Sélecteur universel : s'applique à tout [15] */
+* {
+    box-sizing: border-box; /* Gestion modèle de boîte */
+}
+
+/* Sélecteur de balise [13] */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Couleur de fond [13] */
+    margin: 0;
+    padding: 20px; /* Espace interne [13] */
+}
+
+/* Sélecteur d'ID (unique) [15] */
+#titre-principal {
+    color: #333;
+    text-align: center; /* Alignement texte [13] */
+}
+
+/* Sélecteur de classe (réutilisable) [15] */
+.texte-rouge {
+    color: red;
+    font-weight: bold;
+}
+
+/* Utilisation de Flexbox pour le menu [14] */
+.menu-flex {
+    display: flex;          /* Active Flexbox */
+    justify-content: center;
+    list-style: none;       /* Enlève les puces */
+    padding: 0;
+    gap: 20px;              /* Espacement entre éléments */
+}
+
+/* Combinateur descendant : cible les liens dans le menu [16] */
+.menu-flex a {
+    text-decoration: none;
+    color: navy;
+    font-size: 18px;
+}
+
+/* Pseudo-classe : au survol de la souris [17] */
+.menu-flex a:hover {
+    text-decoration: underline;
+}
+
+/* Combinateur frère adjacent (+) : cible le p juste après un h2 [18] */
+h2 + p {
+    font-style: italic;
+}
+
+/* Stylisation du tableau [10] */
+table {
+    width: 100%; /* Unité relative [19] */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd; /* Bordure [13] */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Classe pour la boîte JS */
+.boite {
+    background-color: white;
+    border: 2px dashed #333;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+/* Responsive Design avec Media Queries [5, 19] */
+@media screen and (max-width: 600px) {
+    body {
+        background-color: #e2e2e2; /* Change le fond sur mobile */
+    }
+    .menu-flex {
+        flex-direction: column; /* Menu vertical sur mobile [14] */
+        align-items: center;
+    }
+}
