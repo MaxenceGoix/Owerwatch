@@ -1,87 +1,473 @@
-/* Sélecteur universel : s'applique à tout [15] */
+/* Reset de base */
 * {
-    box-sizing: border-box; /* Gestion modèle de boîte */
-}
-
-/* Sélecteur de balise [13] */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Couleur de fond [13] */
+    box-sizing: border-box;
     margin: 0;
-    padding: 20px; /* Espace interne [13] */
-}
-
-/* Sélecteur d'ID (unique) [15] */
-#titre-principal {
-    color: #333;
-    text-align: center; /* Alignement texte [13] */
-}
-
-/* Sélecteur de classe (réutilisable) [15] */
-.texte-rouge {
-    color: red;
-    font-weight: bold;
-}
-
-/* Utilisation de Flexbox pour le menu [14] */
-.menu-flex {
-    display: flex;          /* Active Flexbox */
-    justify-content: center;
-    list-style: none;       /* Enlève les puces */
     padding: 0;
-    gap: 20px;              /* Espacement entre éléments */
 }
 
-/* Combinateur descendant : cible les liens dans le menu [16] */
-.menu-flex a {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f6f2;
+    color: #333;
+}
+
+a {
     text-decoration: none;
-    color: navy;
-    font-size: 18px;
+    color: inherit;
 }
 
-/* Pseudo-classe : au survol de la souris [17] */
-.menu-flex a:hover {
-    text-decoration: underline;
+/* Header et navbar */
+
+header {
+    background-color: #28354f;
+    width: 100%;
+    height: 120px;
+    border-bottom: 5px solid #00c3ff;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-/* Combinateur frère adjacent (+) : cible le p juste après un h2 [18] */
-h2 + p {
+header h1 { display: none; }
+
+nav { width: 100%; }
+
+.menu-flex {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+}
+
+.logo-item {
+    margin-right: auto; 
+}
+
+.logo-item a {
+    background: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* logo navbar */
+.logo-item img {
+    height: 90px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.logo-item a:hover img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px #00c3ff);
+}
+
+/* Boutons menu */
+.menu-flex li:not(.logo-item) a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
     font-style: italic;
+    padding: 10px 20px;
+    transition: 0.3s;
 }
 
-/* Stylisation du tableau [10] */
-table {
-    width: 100%; /* Unité relative [19] */
-    border-collapse: collapse;
+.menu-flex li:not(.logo-item) a:hover {
+    color: #00c3ff;
+    text-shadow: 0 0 8px #00c3ff;
+}
+
+/* bouton sign */
+.connexion a {
+    background-color: #f99e1a !important; /* Orange */
+    color: #28354f !important;
+    padding: 12px 30px !important;
+    border-radius: 4px;
+    transform: skewX(-15deg);
+}
+
+.connexion a:hover {
+    background-color: white !important;
+    transform: skewX(-15deg) translateY(-3px);
+}
+
+/* Sections principales */
+section {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-left: 5px solid #f99e1a;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-style: italic;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
     margin-bottom: 20px;
 }
 
-th, td {
-    border: 1px solid #ddd; /* Bordure [13] */
-    padding: 8px;
-    text-align: left;
+/* Page Heros : Images alignées */
+#Tank, #DPS, #Support {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    background: none;
+    border: none;
 }
 
-th {
-    background-color: #4CAF50;
-    color: white;
+#Tank img, #DPS img, #Support img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    transform: skewX(-5deg);
 }
 
-/* Classe pour la boîte JS */
-.boite {
-    background-color: white;
-    border: 2px dashed #333;
+#Tank img:hover, #DPS img:hover, #Support img:hover {
+    border-color: #00c3ff;
+}
+
+/* Page Boutique */
+#shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    background: none;
+    border: none;
+}
+
+.product-item {
+    background: white;
+    border: 1px solid #ccc;
     padding: 20px;
+    text-align: center;
+}
+
+.product-item:hover {
+    border-color: #f99e1a;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00c3ff;
     margin-top: 10px;
 }
 
-/* Responsive Design avec Media Queries [5, 19] */
-@media screen and (max-width: 600px) {
-    body {
-        background-color: #e2e2e2; /* Change le fond sur mobile */
-    }
+.special-offer {
+    background-color: #28354f;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #28354f;
+    color: #f0f6f2;
+    min-height: 50vh;
+    padding: 60px 20px;
+    border-top: 5px solid #00c3ff;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+footer section {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 20px;
+    max-width: 250px;
+}
+
+footer > img {
+    height: 150px;
+    width: auto;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+footer p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #cbd5e0;
+    margin-bottom: 15px;
+}
+
+#footer-partie-gauche img {
+    width: 45px;
+    height: 45px;
+    margin-right: 15px;
+    margin-top: 10px;
+    filter: none;
+    background-color: white;
+    border-radius: 50%;
+    padding: 8px;
+    transition: transform 0.3s;
+}
+
+#footer-partie-gauche img:hover {
+    transform: scale(1.2) rotate(10deg);
+    background-color: #00c3ff;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
     .menu-flex {
-        flex-direction: column; /* Menu vertical sur mobile [14] */
+        flex-direction: column;
         align-items: center;
     }
+    
+    .menu-flex li a {
+        transform: none;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Keyframes, animations */
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 10px rgba(0, 195, 255, 0.4); border-color: #00c3ff; }
+    50% { box-shadow: 0 0 30px rgba(0, 195, 255, 0.8); border-color: #ffffff; }
+    100% { box-shadow: 0 0 10px rgba(0, 195, 255, 0.4); border-color: #00c3ff; }
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+}
+
+/* --- Vidéo accueil --- */
+#hero-video {
+    background-color: #28354f;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 50px;
+    border-bottom: 5px solid #f99e1a;
+}
+
+.video-container {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    border: 3px solid #00c3ff;
+    background: black;
+    animation: neonPulse 3s infinite ease-in-out;
+}
+
+video {
+    display: block;
+}
+
+.hero-text {
+    animation: slideUp 1s ease-out;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+    font-style: italic;
+    border: none;
+}
+
+/* Bouton d'action pas epilepsy friendly */
+.cta-button {
+    display: inline-block;
+    position: relative;
+    background-color: #f99e1a;
+    color: #28354f;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    border-radius: 4px;
+    transform: skewX(-15deg);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+    transform: skewX(-25deg);
+    animation: shine 4s infinite;
+}
+
+.cta-button:hover {
+    background-color: white;
+    transform: skewX(-15deg) scale(1.1);
+    box-shadow: 0 0 15px #f99e1a;
+}
+
+/* Pub pour le battle pass */
+#ad-banner {
+    background: repeating-linear-gradient(
+        45deg,
+        #f99e1a,
+        #f99e1a 10px,
+        #e68a00 10px,
+        #e68a00 20px
+    );
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin: 60px 0;
+    transform: skewY(-2deg);
+}
+
+.ad-content, .ad-button {
+    transform: skewY(2deg); /* Redresse le contenu */
+    color: white;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.new-tag {
+    background-color: #ff0055;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    transform: rotate(-5deg);
+    box-shadow: 2px 2px 0 black;
+}
+
+.ad-content h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-style: italic;
+    border: none;
+}
+
+.ad-button {
+    background-color: white;
+    color: #f99e1a;
+    font-weight: 900;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: 3px solid black;
+    box-shadow: 5px 5px 0 black;
+    transition: transform 0.2s;
+}
+
+.ad-button:hover {
+    transform: skewY(2deg) scale(1.1);
+}
+
+/* --- ACTUALITÉS (NEWS) --- */
+#news-feed {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 20px;
+}
+
+#news-feed h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #28354f;
+}
+
+.news-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.news-card {
+    background: white;
+    width: 300px;
+    border-top: 5px solid #00c3ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: slideUp 0.8s forwards;
+}
+
+/* Effet cascade pour l'apparition */
+.news-card:nth-child(1) { animation-delay: 0.2s; }
+.news-card:nth-child(2) { animation-delay: 0.4s; }
+.news-card:nth-child(3) { animation-delay: 0.6s; }
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 195, 255, 0.2);
+}
+
+.card-image {
+    height: 180px;
+    background-color: #eee;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+    filter: grayscale(40%);
+}
+
+.news-card:hover .card-image img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content h3 {
+    color: #28354f;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.card-content a {
+    color: #f99e1a;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.card-content a:hover {
+    text-decoration: underline;
 }

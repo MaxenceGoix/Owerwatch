@@ -2,10 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <!-- Viewport pour le responsive design [5] -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cours Complet Web</title>
-    <!-- Lien vers le fichier CSS externe [6] -->
+    <title>Accueil - Overwatch</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -13,52 +11,111 @@
     <header>
         <nav>
             <ul class="menu-flex">
-                <li><a href="index.html">Logo</a></li>
+                <li class="logo-item">
+                    <a href="index.html"><img src="../media/Logo.png" alt="Logo"></a>
+                </li>
+                
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="apropos.html">Infos</a></li>
                 <li><a href="heros.html">Heros</a></li>
                 <li><a href="boutique.html">Boutique</a></li>
-                <li><a href="#">Sign in</a></li>
-                <li><a href="#">Sign up</a></li>
+                
+                <li class="connexion"><a href="#">Sign in</a></li>
+                <li class="connexion"><a href="#">Sign up</a></li>
             </ul>
         </nav>
-        <h1>Accueil</h1>
     </header>
-    <section id="Balise_1_img">
-        <img src="https://via.placeholder.com/150" alt="Image de démonstration">
-        <!-- Paragraphe classique [1] -->
-        <p>Some ow shenanigans idk just some text to talk about smth</p>
+
+    <section id="hero-video">
+        <div class="video-container">
+            <video controls width="100%">
+                <source src="../media/vid_accueil.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+        </div>
+        
+        <div class="hero-text">
+            <h2>Bienvenue, Héros</h2>
+            <p>Le monde a besoin de héros. Rejoignez le combat dès aujourd'hui.</p>
+            <a href="boutique.html" class="cta-button">Télécharger le jeu</a>
+        </div>
     </section>
 
-    <section id="texte-de-gauche">
-        <p>Un paragraphe de gauche.</p>
+    <section id="ad-banner">
+        <div class="ad-content">
+            <span class="new-tag">NOUVEAU</span>
+            <h2>PASSE DE COMBAT SAISON 10</h2>
+            <p>Débloquez des skins mythiques et 80 niveaux de récompenses !</p>
+        </div>
+        <a href="boutique.html" class="ad-button">ACHETER - 10$</a>
     </section>
 
-    <section id="texte-du-mid">
-        <p>Un autre paragraphe dans la section du milieu.</p>
+    <section id="news-feed">
+        <h2>Dernières Actualités</h2>
+        
+        <div class="news-grid">
+            <article class="news-card">
+                <div class="card-image">
+                    <img src="../media/Tracer.png" alt="Tracer">
+                </div>
+                <div class="card-content">
+                    <h3>Patch Notes</h3>
+                    <p>Découvrez les derniers équilibrages sur les héros.</p>
+                    <a href="#">Lire plus</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="card-image">
+                    <img src="../media/Domina.png" alt="Domina">
+                </div>
+                <div class="card-content">
+                    <h3>Nouveaux héros</h3>
+                    <p>5 nouveauc héros ont fait leur apparition !</p>
+                    <a href="#">Lire plus</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="card-image">
+                    <img src="../media/Mercy.png" alt="Mercy">
+                </div>
+                <div class="card-content">
+                    <h3>Événement</h3>
+                    <p>L'événement Overwatch vs Talon est en cours ! Choisissez votre camp et battez vous pour revenir glorieux de cette bataille !</p>
+                    <a href="#">Lire plus</a>
+                </div>
+            </article>
+        </div>
     </section>
 
-    <section id="texte-de-droite">
-        <p>Un autre paragraphe de droite.</p>
-    </section>
 </body>
 
 <footer>
-    <img src="../media/Overwatch.png" alt="Image de ow">
+    <img src="../media/Overwatch.png" alt="Logo Overwatch">
+    
     <section id="footer-partie-gauche">
-        <p>© 2024 Cours Complet Web. Tous droits réservés.</p>
-            <img src="../media/Instagram.png" alt="Logo de instagram">
-            <img src="../media/Facebook.png" alt="Logo de facebook">
-            <img src="../media/Twitter.png" alt="Logo de twitter">   
+        <p>© 2024 Cours Complet Web.</p>
+        <div class="social-icons">
+            <img src="../media/Instagram.png" alt="Instagram">
+            <img src="../media/Facebook.png" alt="Facebook">
+            <img src="../media/Twitter.png" alt="Twitter">   
+        </div>
     </section>
-        <section id="footer-column-one">
-        <p> blah blah blah</p>     
+
+    <section>
+        <p>Mentions Légales</p>     
+        <p>Confidentialité</p>
     </section>
-            <section id="footer-column-two">
-        <p> blah blah blah</p>     
+    
+    <section>
+        <p>Support</p>     
+        <p>Contact</p>
     </section>
-            <section id="footer-column-three">
-        <p> blah blah blah</p>     
+    
+    <section>
+        <p>Carrières</p>     
+        <p>Presse</p>
     </section>
 </footer>
 </html>
