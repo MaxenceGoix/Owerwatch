@@ -1,8 +1,12 @@
-/* Reset de base */
+/* ================= GLOBAL ================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -16,8 +20,7 @@ a {
     color: inherit;
 }
 
-/* Header et navbar */
-
+/* ================= HEADER & NAV ================= */
 header {
     background-color: #28354f;
     width: 100%;
@@ -30,7 +33,6 @@ header {
 }
 
 header h1 { display: none; }
-
 nav { width: 100%; }
 
 .menu-flex {
@@ -41,9 +43,8 @@ nav { width: 100%; }
     gap: 20px;
 }
 
-.logo-item {
-    margin-right: auto; 
-}
+/* Logo */
+.logo-item { margin-right: auto; }
 
 .logo-item a {
     background: transparent !important;
@@ -52,7 +53,6 @@ nav { width: 100%; }
     box-shadow: none !important;
 }
 
-/* logo navbar */
 .logo-item img {
     height: 90px;
     width: auto;
@@ -64,7 +64,7 @@ nav { width: 100%; }
     filter: drop-shadow(0 0 10px #00c3ff);
 }
 
-/* Boutons menu */
+/* Liens Menu */
 .menu-flex li:not(.logo-item) a {
     color: white;
     font-size: 20px;
@@ -80,9 +80,9 @@ nav { width: 100%; }
     text-shadow: 0 0 8px #00c3ff;
 }
 
-/* bouton sign */
+/* Boutons Connexion */
 .connexion a {
-    background-color: #f99e1a !important; /* Orange */
+    background-color: #f99e1a !important;
     color: #28354f !important;
     padding: 12px 30px !important;
     border-radius: 4px;
@@ -94,7 +94,7 @@ nav { width: 100%; }
     transform: skewX(-15deg) translateY(-3px);
 }
 
-/* Sections principales */
+/* ================= SECTIONS GÉNÉRALES ================= */
 section {
     max-width: 1200px;
     margin: 0 auto 30px auto;
@@ -111,36 +111,337 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Page Heros : Images alignées */
-#Tank, #DPS, #Support {
+/* ================= PAGE DÉTAILS HÉROS ================= */
+
+/* La carte globale du héros */
+.hero-detail-section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px; /* Espace entre les héros */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-left: 6px solid #f99e1a;
+}
+
+/* Conteneur flexible : Image à gauche, Texte à droite */
+.hero-flex {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    background: none;
+    align-items: center; /* Centre verticalement */
+    gap: 30px;
+}
+
+/* Image du héros : Taille fixée */
+.hero-flex img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 4px solid #28354f;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.3);
+    flex-shrink: 0; /* Empêche l'image de s'écraser */
+}
+
+/* Partie Texte */
+.hero-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-info h2 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 10px;
     border: none;
 }
 
+/* Badge Rôle (Tank/DPS/Support) */
+.role-badge {
+    display: inline-block;
+    background: #28354f;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border: 1px solid #00c3ff;
+}
+
+/* Bouton Voir Capacités */
+.ability-toggle {
+    background-color: #f99e1a;
+    color: #28354f;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 15px;
+    transform: skewX(-10deg);
+    transition: 0.3s;
+}
+
+.ability-toggle:hover {
+    background-color: white;
+    box-shadow: 0 0 10px #f99e1a;
+}
+
+/* Panneau Capacités (Caché par défaut) */
+.abilities-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px dashed #ccc;
+    animation: slideDown 0.5s ease-out;
+}
+
+.ability-card {
+    background: #f0f6f2;
+    padding: 15px;
+    border-left: 4px solid #00c3ff;
+    border-radius: 4px;
+}
+
+.ability-card h4 {
+    color: #28354f;
+    margin-bottom: 5px;
+}
+
+.ability-card.ult {
+    border-left-color: #f99e1a;
+    background: #fff5e6;
+}
+
+/* ================= PAGE ACCUEIL (Vidéo & Pub) ================= */
+#hero-video {
+    background-color: #28354f;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 50px;
+    border-bottom: 5px solid #f99e1a;
+}
+
+.video-container {
+    max-width: 1000px;
+    margin: 0 auto 30px auto;
+    border: 3px solid #00c3ff;
+    background: black;
+    animation: neonPulse 3s infinite ease-in-out;
+}
+
+video { display: block; }
+
+.hero-text h2 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 10px;
+    font-style: italic;
+    border: none;
+    animation: slideUp 1s ease-out;
+}
+
+/* Bouton Appel à l'action */
+.cta-button {
+    display: inline-block;
+    position: relative;
+    background-color: #f99e1a;
+    color: #28354f;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+    border-radius: 4px;
+    transform: skewX(-15deg);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+    transform: skewX(-25deg);
+    animation: shine 4s infinite;
+}
+
+.cta-button:hover {
+    background-color: white;
+    transform: skewX(-15deg) scale(1.1);
+    box-shadow: 0 0 15px #f99e1a;
+}
+
+/* Bannière Pub */
+#ad-banner {
+    background: repeating-linear-gradient(45deg, #f99e1a, #f99e1a 10px, #e68a00 10px, #e68a00 20px);
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin: 60px 0;
+    transform: skewY(-2deg);
+}
+
+.ad-content, .ad-button {
+    transform: skewY(2deg);
+    color: white;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.new-tag {
+    background-color: #ff0055;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -25px; left: 0;
+    transform: rotate(-5deg);
+    box-shadow: 2px 2px 0 black;
+}
+
+.ad-content h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-style: italic;
+    border: none;
+}
+
+.ad-button {
+    background-color: white;
+    color: #f99e1a;
+    font-weight: 900;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: 3px solid black;
+    box-shadow: 5px 5px 0 black;
+    transition: transform 0.2s;
+}
+
+.ad-button:hover { transform: skewY(2deg) scale(1.1); }
+
+/* ================= HEROS ================= */
+
+#Tank, #DPS, #Support {
+    display: flex;
+    flex-wrap: wrap;       /* Permet aux images de passer à la ligne */
+    justify-content: center; /* Centre les images au milieu de l'écran */
+    gap: 15px;             /* Petit espace entre les images */
+    padding: 20px;
+}
+
+/* Style des titres de section (Tank, DPS...) */
+#Tank h2, #DPS h2, #Support h2 {
+    width: 100%;           /* Le titre prend toute la largeur */
+    text-align: center;
+    color: #28354f;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #f99e1a;
+}
+
+/* Style des images (Les icônes cliquables) */
 #Tank img, #DPS img, #Support img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 3px solid #ccc;
-    border-radius: 5px;
-    transform: skewX(-5deg);
+    width: 110px;          /* Taille FIXE petite */
+    height: 110px;         /* Taille FIXE petite */
+    object-fit: cover;     /* L'image remplit le carré sans s'écraser */
+    border-radius: 15px;   /* Coins arrondis style appli mobile */
+    border: 3px solid white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Petite ombre */
+    transition: transform 0.2s, border-color 0.2s; /* Animation fluide au survol */
 }
 
 #Tank img:hover, #DPS img:hover, #Support img:hover {
-    border-color: #00c3ff;
+    transform: scale(1.15); /* Grossit un peu */
+    border-color: #00c3ff;  /* Bordure bleue néon */
+    box-shadow: 0 0 15px #00c3ff; /* Lueur bleue */
+    z-index: 10;
 }
 
-/* Page Boutique */
+/* ================= ACTUALITÉS & BOUTIQUE ================= */
+#news-feed, #shop-grid {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#news-feed h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #28354f;
+}
+
+.news-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.news-card {
+    background: white;
+    width: 300px;
+    border-top: 5px solid #00c3ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: slideUp 0.8s forwards;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 195, 255, 0.2);
+}
+
+.news-card:nth-child(1) { animation-delay: 0.2s; }
+.news-card:nth-child(2) { animation-delay: 0.4s; }
+.news-card:nth-child(3) { animation-delay: 0.6s; }
+
+.card-image {
+    height: 180px;
+    background-color: #eee;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+    filter: grayscale(40%);
+}
+
+.news-card:hover .card-image img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.card-content { padding: 20px; text-align: left; }
+.card-content h3 { color: #28354f; font-size: 1.5rem; margin-bottom: 10px; border: none; }
+.card-content a { color: #f99e1a; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
+
+/* Boutique Grid */
 #shop-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    background: none;
-    border: none;
 }
 
 .product-item {
@@ -150,23 +451,10 @@ h2 {
     text-align: center;
 }
 
-.product-item:hover {
-    border-color: #f99e1a;
-}
+.product-item:hover { border-color: #f99e1a; }
+.price { font-size: 20px; font-weight: bold; color: #00c3ff; margin-top: 10px; }
 
-.price {
-    font-size: 20px;
-    font-weight: bold;
-    color: #00c3ff;
-    margin-top: 10px;
-}
-
-.special-offer {
-    background-color: #28354f;
-    color: white;
-}
-
-/* Footer */
+/* ================= FOOTER ================= */
 footer {
     background-color: #28354f;
     color: #f0f6f2;
@@ -220,24 +508,14 @@ footer p {
     background-color: #00c3ff;
 }
 
-/* Mobile */
-@media screen and (max-width: 700px) {
-    .menu-flex {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .menu-flex li a {
-        transform: none;
-        width: 100%;
-        text-align: center;
-    }
-}
-
-/* Keyframes, animations */
-
+/* ================= ANIMATIONS ================= */
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -253,221 +531,31 @@ footer p {
     100% { left: 100%; }
 }
 
-/* --- Vidéo accueil --- */
-#hero-video {
-    background-color: #28354f;
-    color: white;
-    text-align: center;
-    padding: 40px;
-    margin-bottom: 50px;
-    border-bottom: 5px solid #f99e1a;
-}
+/* Affichage mobile */
+@media screen and (max-width: 768px) {
+    /* Menu */
+    .menu-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu-flex li a {
+        transform: none;
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Fiches Héros : Passe en vertical */
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-info {
+        align-items: center;
+    }
 
-.video-container {
-    max-width: 1000px;
-    margin: 0 auto 30px auto;
-    border: 3px solid #00c3ff;
-    background: black;
-    animation: neonPulse 3s infinite ease-in-out;
-}
-
-video {
-    display: block;
-}
-
-.hero-text {
-    animation: slideUp 1s ease-out;
-}
-
-.hero-text h2 {
-    font-size: 3rem;
-    color: white;
-    margin-bottom: 10px;
-    font-style: italic;
-    border: none;
-}
-
-/* Bouton d'action pas epilepsy friendly */
-.cta-button {
-    display: inline-block;
-    position: relative;
-    background-color: #f99e1a;
-    color: #28354f;
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-top: 20px;
-    border-radius: 4px;
-    transform: skewX(-15deg);
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.cta-button::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
-    transform: skewX(-25deg);
-    animation: shine 4s infinite;
-}
-
-.cta-button:hover {
-    background-color: white;
-    transform: skewX(-15deg) scale(1.1);
-    box-shadow: 0 0 15px #f99e1a;
-}
-
-/* Pub pour le battle pass */
-#ad-banner {
-    background: repeating-linear-gradient(
-        45deg,
-        #f99e1a,
-        #f99e1a 10px,
-        #e68a00 10px,
-        #e68a00 20px
-    );
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    border-top: 5px solid white;
-    border-bottom: 5px solid white;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    margin: 60px 0;
-    transform: skewY(-2deg);
-}
-
-.ad-content, .ad-button {
-    transform: skewY(2deg); /* Redresse le contenu */
-    color: white;
-    text-shadow: 2px 2px 0 #000;
-}
-
-.new-tag {
-    background-color: #ff0055;
-    padding: 5px 10px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    position: absolute;
-    top: -25px;
-    left: 0;
-    transform: rotate(-5deg);
-    box-shadow: 2px 2px 0 black;
-}
-
-.ad-content h2 {
-    font-size: 2.5rem;
-    margin: 0;
-    font-style: italic;
-    border: none;
-}
-
-.ad-button {
-    background-color: white;
-    color: #f99e1a;
-    font-weight: 900;
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    border: 3px solid black;
-    box-shadow: 5px 5px 0 black;
-    transition: transform 0.2s;
-}
-
-.ad-button:hover {
-    transform: skewY(2deg) scale(1.1);
-}
-
-/* --- ACTUALITÉS (NEWS) --- */
-#news-feed {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0 20px;
-}
-
-#news-feed h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #28354f;
-}
-
-.news-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.news-card {
-    background: white;
-    width: 300px;
-    border-top: 5px solid #00c3ff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    animation: slideUp 0.8s forwards;
-}
-
-/* Effet cascade pour l'apparition */
-.news-card:nth-child(1) { animation-delay: 0.2s; }
-.news-card:nth-child(2) { animation-delay: 0.4s; }
-.news-card:nth-child(3) { animation-delay: 0.6s; }
-
-.news-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 195, 255, 0.2);
-}
-
-.card-image {
-    height: 180px;
-    background-color: #eee;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.3s;
-    filter: grayscale(40%);
-}
-
-.news-card:hover .card-image img {
-    filter: grayscale(0%);
-    transform: scale(1.1);
-}
-
-.card-content {
-    padding: 20px;
-    text-align: left;
-}
-
-.card-content h3 {
-    color: #28354f;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    border: none;
-}
-
-.card-content a {
-    color: #f99e1a;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-.card-content a:hover {
-    text-decoration: underline;
+    .hero-flex img {
+        width: 120px;
+        height: 120px;
+    }
 }

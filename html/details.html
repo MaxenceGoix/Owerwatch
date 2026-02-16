@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détails des Héros - OW Site</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        html { scroll-behavior: smooth; }
-        .hero-detail-section { margin-bottom: 100px; padding: 20px; border-bottom: 1px dashed #ccc; }
-        .hero-flex { display: flex; align-items: center; gap: 40px; }
-        .hero-flex img { max-width: 300px; border-radius: 10px; }
-    </style>
+    
+    <script>
+        function toggleAbilities(id) {
+            var panel = document.getElementById(id);
+            if (panel.style.display === "none" || panel.style.display === "") {
+                panel.style.display = "grid";
+            } else {
+                panel.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
 
 <header>
     <nav>
         <ul class="menu-flex">
-            <li class="logo-item"><a href="index.html"><img src="../media/Logo.png" alt="Logo"></a></li>
+            <li class="logo-item"><a href="index.html"><img src="../media/Overwatch.png" alt="Logo"></a></li>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="apropos.html">Infos</a></li>
             <li><a href="heros.html">Heros</a></li>
@@ -26,563 +31,907 @@
             <li class="connexion"><a href="#">Sign up</a></li>
         </ul>
     </nav>
-    <h1>Détails des Héros</h1>
 </header>
 
 <main id="tous-les-heros">
 
-    <!-- ================= TANK ================= -->
-
     <article id="reinhardt" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Reinhardt.png" alt="Reinhardt">
-            <div>
+            <div class="hero-info">
                 <h2>Reinhardt</h2>
-                <p><strong>Rôle :</strong> Tank</p>
+                <p class="role-badge">TANK</p>
                 <p>Un chevalier moderne qui protège ses alliés avec son immense bouclier et son marteau.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('rein-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="rein-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Marteau à réaction</h4><p>Arme de mêlée dévastatrice.</p></div>
+            <div class="ability-card"><h4>Écran</h4><p>Déploie une large barrière énergétique frontale.</p></div>
+            <div class="ability-card"><h4>Charge</h4><p>Fonçe vers l'avant et écrase un ennemi contre un mur.</p></div>
+            <div class="ability-card ult"><h4>Choc Sismique</h4><p>Renverse tous les ennemis devant lui.</p></div>
         </div>
     </article>
 
     <article id="winston" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Winton.png" alt="Winston">
-            <div>
+            <div class="hero-info">
                 <h2>Winston</h2>
-                <p><strong>Rôle :</strong> Tank</p>
+                <p class="role-badge">TANK</p>
                 <p>Un scientifique gorille capable de plonger au cœur du combat grâce à sa mobilité.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('winston-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="winston-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Canon Tesla</h4><p>Arme électrique à courte portée qui vise plusieurs ennemis.</p></div>
+            <div class="ability-card"><h4>Propulseurs</h4><p>Bondit dans les airs pour écraser ses ennemis.</p></div>
+            <div class="ability-card"><h4>Générateur d'écran</h4><p>Pose une bulle protectrice.</p></div>
+            <div class="ability-card ult"><h4>Rage Primordiale</h4><p>Winston devient enragé, gagne des PV et repousse les ennemis.</p></div>
         </div>
     </article>
 
     <article id="dva" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Dva.png" alt="D.Va">
-            <div>
+            <div class="hero-info">
                 <h2>D.Va</h2>
-                <p><strong>Rôle :</strong> Tank</p>
+                <p class="role-badge">TANK</p>
                 <p>Ancienne joueuse pro pilotant un méca surarmé pour défendre son équipe.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('dva-abilities')">Voir les capacités</button>
             </div>
         </div>
-    </article>
-
-    <article id="orisa" class="hero-detail-section">
-        <div class="hero-flex">
-            <img src="../media/Orisa.png" alt="Orisa">
-            <div>
-                <h2>Orisa</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>Un robot protecteur conçu pour défendre les plus faibles.</p>
-            </div>
+        <div id="dva-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Fusio-canons</h4><p>Canons automatiques à courte portée infinis.</p></div>
+            <div class="ability-card"><h4>Matrice défensive</h4><p>Bloque les projectiles devant elle.</p></div>
+            <div class="ability-card"><h4>Turboréacteurs</h4><p>S'envole dans la direction visée.</p></div>
+            <div class="ability-card ult"><h4>Autodestruction</h4><p>S'éjecte de son méca qui explose et tue tout le monde.</p></div>
         </div>
     </article>
 
     <article id="roadhog" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Roadhog.png" alt="Roadhog">
-            <div>
+            <div class="hero-info">
                 <h2>Roadhog</h2>
-                <p><strong>Rôle :</strong> Tank</p>
+                <p class="role-badge">TANK</p>
                 <p>Un combattant brutal utilisant un crochet mortel pour attirer ses ennemis.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('hog-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="hog-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Déferrailleur</h4><p>Tire des éclats de métal à courte ou moyenne portée.</p></div>
+            <div class="ability-card"><h4>Traquelard</h4><p>Lance un crochet pour attirer un ennemi vers lui.</p></div>
+            <div class="ability-card"><h4>Inhalateur</h4><p>Se soigne et réduit les dégâts subis.</p></div>
+            <div class="ability-card ult"><h4>Équarrisseur</h4><p>Repousse les ennemis avec une mitrailleuse lourde.</p></div>
         </div>
     </article>
 
-    <article id="sigma" class="hero-detail-section">
+    <article id="orisa" class="hero-detail-section">
         <div class="hero-flex">
-            <img src="../media/Sigma.png" alt="Sigma">
-            <div>
-                <h2>Sigma</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>Un scientifique instable manipulant la gravité sur le champ de bataille.</p>
+            <img src="../media/Orisa.png" alt="Orisa">
+            <div class="hero-info">
+                <h2>Orisa</h2>
+                <p class="role-badge">TANK</p>
+                <p>Un robot protecteur conçu pour défendre Numbani.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('orisa-abilities')">Voir les capacités</button>
             </div>
         </div>
-    </article>
-
-    <article id="zarya" class="hero-detail-section">
-        <div class="hero-flex">
-            <img src="../media/Zarya.png" alt="Zarya">
-            <div>
-                <h2>Zarya</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>Une athlète surpuissante capable d’absorber les dégâts pour renforcer son arme.</p>
-            </div>
-        </div>
-    </article>
-
-    <article id="wreckingball" class="hero-detail-section">
-        <div class="hero-flex">
-            <img src="../media/Hampter.png" alt="Wrecking Ball">
-            <div>
-                <h2>Wrecking Ball</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>Un hamster pilote de méca, rapide et imprévisible.</p>
-            </div>
+        <div id="orisa-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Canon à fusion</h4><p>Arme automatique qui chauffe en tirant.</p></div>
+            <div class="ability-card"><h4>Javelot d'énergie</h4><p>Lance un javelot qui étourdit et repousse.</p></div>
+            <div class="ability-card"><h4>Blindage</h4><p>Devient insensible aux contrôles et réduit les dégâts.</p></div>
+            <div class="ability-card ult"><h4>Terra-Source</h4><p>Attire les ennemis et charge une explosion massive.</p></div>
         </div>
     </article>
 
     <article id="ramattra" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Ramattra.png" alt="Ramattra">
-            <div>
+            <div class="hero-info">
                 <h2>Ramattra</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>Chef omnique capable d’alterner entre défense et attaque brutale.</p>
+                <p class="role-badge">TANK</p>
+                <p>Un chef omnique capable de changer de forme pour s'adapter au combat.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('ram-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="ram-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Accélérateur du vide</h4><p>Tire des projectiles à distance.</p></div>
+            <div class="ability-card"><h4>Forme de Némésis</h4><p>Devient géant et frappe à travers les boucliers.</p></div>
+            <div class="ability-card"><h4>Vortex vorace</h4><p>Crée une zone qui ralentit et plaque au sol.</p></div>
+            <div class="ability-card ult"><h4>Annihilation</h4><p>Draine la vie des ennemis proches tant qu'ils sont là.</p></div>
         </div>
     </article>
 
     <article id="junkerqueen" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Junker_queen.png" alt="Junker Queen">
-            <div>
+            <div class="hero-info">
                 <h2>Junker Queen</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>Une reine guerrière qui mène la bataille au corps à corps.</p>
+                <p class="role-badge">TANK</p>
+                <p>La reine de Junkertown, brutale et armée d'une hache et d'un couteau.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('jq-abilities')">Voir les capacités</button>
             </div>
         </div>
-    </article>
-
-    <article id="doomfist" class="hero-detail-section">
-        <div class="hero-flex">
-            <img src="../media/Doomfist.png" alt="Doomfist">
-            <div>
-                <h2>Doomfist</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>Un combattant redoutable utilisant un gantelet surpuissant.</p>
-            </div>
-        </div>
-    </article>
-
-    <article id="hazard" class="hero-detail-section">
-        <div class="hero-flex">
-            <img src="../media/Hazard.png" alt="Hazard">
-            <div>
-                <h2>Hazard</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>blah blah blah</p>
-            </div>
+        <div id="jq-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Lame crantée</h4><p>Lance un couteau et rappelle un ennemi vers elle.</p></div>
+            <div class="ability-card"><h4>Massacre</h4><p>Frappe avec une hache géante et cause un saignement.</p></div>
+            <div class="ability-card"><h4>Cri de commandement</h4><p>Donne de la santé et de la vitesse aux alliés.</p></div>
+            <div class="ability-card ult"><h4>Carnage</h4><p>Charge en avant et blesse tous les ennemis sur son passage.</p></div>
         </div>
     </article>
 
     <article id="mauga" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Mauga.png" alt="Mauga">
-            <div>
+            <div class="hero-info">
                 <h2>Mauga</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>Un tank agressif spécialisé dans le combat rapproché et soutenu.</p>
+                <p class="role-badge">TANK</p>
+                <p>Un combattant lourd armé de deux mitrailleuses chaotiques.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('mauga-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="mauga-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Mitrailleuses</h4><p>Une incendiaire pour brûler, une volatile pour les coups critiques.</p></div>
+            <div class="ability-card"><h4>Débordement</h4><p>Charge inarrêtable qui écrase les ennemis.</p></div>
+            <div class="ability-card"><h4>Overdrive cardiaque</h4><p>Soigne les alliés quand ils infligent des dégâts.</p></div>
+            <div class="ability-card ult"><h4>Combat en cage</h4><p>Enferme les ennemis dans une arène avec lui.</p></div>
+        </div>
+    </article>
+
+    <article id="sigma" class="hero-detail-section">
+        <div class="hero-flex">
+            <img src="../media/Sigma.png" alt="Sigma">
+            <div class="hero-info">
+                <h2>Sigma</h2>
+                <p class="role-badge">TANK</p>
+                <p>Un scientifique instable manipulant la gravité sur le champ de bataille.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('sigma-abilities')">Voir les capacités</button>
+            </div>
+        </div>
+        <div id="sigma-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Hypersphères</h4><p>Lance deux charges gravitationnelles qui rebondissent.</p></div>
+            <div class="ability-card"><h4>Écran expérimental</h4><p>Projette une barrière flottante.</p></div>
+            <div class="ability-card"><h4>Captation cinétique</h4><p>Absorbe les projectiles et les convertit en bouclier.</p></div>
+            <div class="ability-card ult"><h4>Flux Gravitationnel</h4><p>Soulève les ennemis dans les airs puis les écrase au sol.</p></div>
+        </div>
+    </article>
+
+    <article id="zarya" class="hero-detail-section">
+        <div class="hero-flex">
+            <img src="../media/Zarya.png" alt="Zarya">
+            <div class="hero-info">
+                <h2>Zarya</h2>
+                <p class="role-badge">TANK</p>
+                <p>Une athlète surpuissante capable d’absorber les dégâts pour renforcer son arme.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('zarya-abilities')">Voir les capacités</button>
+            </div>
+        </div>
+        <div id="zarya-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Canon à particules</h4><p>Tire un rayon d'énergie destructeur.</p></div>
+            <div class="ability-card"><h4>Écran de particules</h4><p>Crée une barrière personnelle qui absorbe les dégâts.</p></div>
+            <div class="ability-card"><h4>Écran généré</h4><p>Crée une barrière autour d'un allié.</p></div>
+            <div class="ability-card ult"><h4>Orbe à gravitons</h4><p>Attire les ennemis dans un trou noir.</p></div>
+        </div>
+    </article>
+
+    <article id="wreckingball" class="hero-detail-section">
+        <div class="hero-flex">
+            <img src="../media/Hampter.png" alt="Wrecking Ball">
+            <div class="hero-info">
+                <h2>Wrecking Ball</h2>
+                <p class="role-badge">TANK</p>
+                <p>Un hamster pilote de méca, rapide et imprévisible.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('ball-abilities')">Voir les capacités</button>
+            </div>
+        </div>
+        <div id="ball-abilities" class="abilities-panel" style="display: none;">
+             <div class="ability-card"><h4>Roulade</h4><p>Se transforme en boule pour rouler vite.</p></div>
+             <div class="ability-card"><h4>Griffe-crampon</h4><p>S'accroche aux murs pour se balancer.</p></div>
+             <div class="ability-card"><h4>Bouclier adaptatif</h4><p>Gagne du bouclier selon le nombre d'ennemis proches.</p></div>
+             <div class="ability-card ult"><h4>Champ de mines</h4><p>Déploie un vaste champ de mines explosives.</p></div>
+        </div>
+    </article>
+
+    <article id="doomfist" class="hero-detail-section">
+        <div class="hero-flex">
+            <img src="../media/Doomfist.png" alt="Doomfist">
+            <div class="hero-info">
+                <h2>Doomfist</h2>
+                <p class="role-badge">TANK</p>
+                <p>Un combattant redoutable utilisant un gantelet surpuissant.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('doom-abilities')">Voir les capacités</button>
+            </div>
+        </div>
+        <div id="doom-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Direct d'Enfer</h4><p>Charge un coup de poing dévastateur.</p></div>
+            <div class="ability-card"><h4>Onde de choc</h4><p>Bondit en avant et frappe le sol.</p></div>
+            <div class="ability-card"><h4>Parade</h4><p>Bloque les attaques frontales.</p></div>
+            <div class="ability-card ult"><h4>Frappe Météore</h4><p>S'écrase au sol en infligeant d'énormes dégâts.</p></div>
+        </div>
+    </article>
+
+    <article id="hazard" class="hero-detail-section">
+        <div class="hero-flex">
+            <img src="../media/Hazard.png" alt="Hazard">
+            <div class="hero-info">
+                <h2>Hazard</h2>
+                <p class="role-badge">TANK</p>
+                <p>Membre des Phreaks, agressif et résistant.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('hazard-abilities')">Voir les capacités</button>
+            </div>
+        </div>
+        <div id="hazard-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Eperon osseux</h4><p>Tire des salves de pointes.</p></div>
+            <div class="ability-card"><h4>Garde hérissée</h4><p>Se protège tout en infligeant des dégats aux ennemis devant.</p></div>
+            <div class="ability-card"><h4>Mur dentelé</h4><p>DCrée un mur qui repousse les ennemis.</p></div>
+            <div class="ability-card ult"><h4>Déluge</h4><p>Fait pleuvoir des épines.</p></div>
         </div>
     </article>
 
     <article id="domina" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Domina.png" alt="Domina">
-            <div>
+            <div class="hero-info">
                 <h2>Domina</h2>
-                <p><strong>Rôle :</strong> Tank</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">TANK</p>
+                <p>Tank imposant capable de contrôler la zone.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('domina-abilities')">Voir les capacités</button>
             </div>
         </div>
-
-    <!-- ================= DPS ================= -->
+        <div id="domina-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Magnum à photons</h4><p>Rayon à portée moyenne terminant enb un tir puissant.</p></div>
+            <div class="ability-card"><h4>Matrice d'écrans</h4><p>Fait apparaître une barrière.</p></div>
+            <div class="ability-card"><h4>Charge cristalline</h4><p>Projette un crystal explosif.</p></div>
+            <div class="ability-card ult"><h4>Panoptique</h4><p>Crée une barrière explosive sur l'adversaire.</p></div>
+        </div>
+    </article>
 
     <article id="ashe" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Ashe.png" alt="Ashe">
-            <div>
+            <div class="hero-info">
                 <h2>Ashe</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Une tireuse d'élite accompagnée de son fidèle allié B.O.B.</p>
+                <p class="role-badge">DPS</p>
+                <p>Une hors-la-loi armée d'une carabine, accompagnée de son majordome Bob.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('ashe-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="ashe-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>La Vipère</h4><p>Carabine semi-automatique précise.</p></div>
+            <div class="ability-card"><h4>Dynamite</h4><p>Lance un explosif qui brûle les ennemis.</p></div>
+            <div class="ability-card"><h4>Canon scié</h4><p>Repousse Ashe et les ennemis proches.</p></div>
+            <div class="ability-card ult"><h4>B.O.B.</h4><p>Invoque un gros robot qui charge et tire automatiquement.</p></div>
         </div>
     </article>
 
     <article id="bastion" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Bastion.png" alt="Bastion">
-            <div>
+            <div class="hero-info">
                 <h2>Bastion</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Un robot polyvalent capable de se transformer pour infliger de lourds dégâts.</p>
+                <p class="role-badge">DPS</p>
+                <p>Un robot de siège capable de se transformer en minigun mobile.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('bastion-abilities')">Voir les capacités</button>
             </div>
         </div>
-    </article>
-
-    <article id="cassidy" class="hero-detail-section">
-        <div class="hero-flex">
-            <img src="../media/Cassidy.png" alt="Cassidy">
-            <div>
-                <h2>Cassidy</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Un tireur précis incarnant la justice à l'ancienne.</p>
-            </div>
-        </div>
-    </article>
-
-    <article id="echo" class="hero-detail-section">
-        <div class="hero-flex">
-            <img src="../media/Echo.png" alt="Echo">
-            <div>
-                <h2>Echo</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Un robot capable de copier les capacités de ses ennemis.</p>
-            </div>
+        <div id="bastion-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Configuration : Assaut</h4><p>Devient un tank mobile avec une gatling dévastatrice.</p></div>
+            <div class="ability-card"><h4>Grenade tactique</h4><p>Lance une bombe qui rebondit et colle.</p></div>
+            <div class="ability-card"><h4>Reconfiguration</h4><p>Passe du mode reconnaissance au mode assaut.</p></div>
+            <div class="ability-card ult"><h4>Artillerie</h4><p>Tire trois obus d'artillerie à longue distance.</p></div>
         </div>
     </article>
 
     <article id="genji" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Genji.png" alt="Genji">
-            <div>
+            <div class="hero-info">
                 <h2>Genji</h2>
-                <p><strong>Rôle :</strong> DPS</p>
+                <p class="role-badge">DPS</p>
                 <p>Un ninja cyborg agile et mortel au corps à corps.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('genji-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="genji-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Shurikens</h4><p>Lance 3 shurikens précis ou en éventail.</p></div>
+            <div class="ability-card"><h4>Riposte</h4><p>Renvoie les projectiles ennemis.</p></div>
+            <div class="ability-card"><h4>Frappe éclair</h4><p>Fonçe en avant en tranchant les ennemis.</p></div>
+            <div class="ability-card ult"><h4>Lame du Dragon</h4><p>Dégaine son katana pour des attaques au corps à corps mortelles.</p></div>
+        </div>
+    </article>
+
+    <article id="cassidy" class="hero-detail-section">
+        <div class="hero-flex">
+            <img src="../media/Cassidy.png" alt="Cassidy">
+            <div class="hero-info">
+                <h2>Cassidy</h2>
+                <p class="role-badge">DPS</p>
+                <p>Un tireur précis incarnant la justice à l'ancienne.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('cree-abilities')">Voir les capacités</button>
+            </div>
+        </div>
+        <div id="cree-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Pacificateur</h4><p>Revolver précis et puissant.</p></div>
+            <div class="ability-card"><h4>Grenade magnétique</h4><p>Une grenade qui suit l'ennemi et explose.</p></div>
+            <div class="ability-card"><h4>Roulade</h4><p>Plonge dans une direction et recharge son arme.</p></div>
+            <div class="ability-card ult"><h4>Implacable</h4><p>Verrouille les cibles et tire pour tuer instantanément.</p></div>
+        </div>
+    </article>
+
+    <article id="echo" class="hero-detail-section">
+        <div class="hero-flex">
+            <img src="../media/Echo.png" alt="Echo">
+            <div class="hero-info">
+                <h2>Echo</h2>
+                <p class="role-badge">DPS</p>
+                <p>Un robot évolutif capable de voler et de copier les ennemis.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('echo-abilities')">Voir les capacités</button>
+            </div>
+        </div>
+        <div id="echo-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Tir triangulaire</h4><p>Tire trois projectiles en triangle.</p></div>
+            <div class="ability-card"><h4>Bombes collantes</h4><p>Lance une volée de bombes qui explosent après délai.</p></div>
+            <div class="ability-card"><h4>Vol</h4><p>S'envole librement vers l'avant.</p></div>
+            <div class="ability-card ult"><h4>Duplication</h4><p>Devient une copie d'un héros ennemi.</p></div>
         </div>
     </article>
 
     <article id="hanzo" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Hanzo.png" alt="Hanzo">
-            <div>
+            <div class="hero-info">
                 <h2>Hanzo</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Un archer expert capable de traquer ses ennemis à distance.</p>
+                <p class="role-badge">DPS</p>
+                <p>Un archer maître capable de voir à travers les murs.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('hanzo-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="hanzo-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Arc tempête</h4><p>Tire des flèches puissantes.</p></div>
+            <div class="ability-card"><h4>Rafale</h4><p>Tire rapidement plusieurs flèches.</p></div>
+            <div class="ability-card"><h4>Flèche sonique</h4><p>Dévoile la position des ennemis proches.</p></div>
+            <div class="ability-card ult"><h4>Frappe du Dragon</h4><p>Tire deux dragons spirituels qui traversent les murs.</p></div>
         </div>
     </article>
 
     <article id="junkrat" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Junkrat.png" alt="Junkrat">
-            <div>
+            <div class="hero-info">
                 <h2>Junkrat</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Un pyromane chaotique utilisant des explosifs pour semer la destruction.</p>
+                <p class="role-badge">DPS</p>
+                <p>Un fou des explosifs qui sème le chaos avec ses bombes.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('junk-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="junk-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Lance-grenades</h4><p>Tire des grenades rebondissantes.</p></div>
+            <div class="ability-card"><h4>Mine incapacitante</h4><p>Lance une mine qu'il peut faire exploser pour sauter.</p></div>
+            <div class="ability-card"><h4>Piège d'acier</h4><p>Immobilise un ennemi qui marche dessus.</p></div>
+            <div class="ability-card ult"><h4>Pneumastic</h4><p>Pilote une roue explosive motorisée.</p></div>
         </div>
     </article>
 
     <article id="mei" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Mei.png" alt="Mei">
-            <div>
+            <div class="hero-info">
                 <h2>Mei</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Une climatologue utilisant la glace pour contrôler le terrain.</p>
+                <p class="role-badge">DPS</p>
+                <p>Une climatologue qui utilise la glace pour geler et bloquer les ennemis.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('mei-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="mei-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Canon endothermique</h4><p>Tire un rayon d'énergie qui ralentit.</p></div>
+            <div class="ability-card"><h4>Cryostase</h4><p>S'enferme dans un bloc de glace pour se soigner.</p></div>
+            <div class="ability-card"><h4>Mur de glace</h4><p>Crée un mur géant qui bloque le passage.</p></div>
+            <div class="ability-card ult"><h4>Blizzard</h4><p>Gèle tous les ennemis dans une large zone.</p></div>
         </div>
     </article>
 
     <article id="pharah" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Pharah.png" alt="Pharah">
-            <div>
+            <div class="hero-info">
                 <h2>Pharah</h2>
-                <p><strong>Rôle :</strong> DPS</p>
+                <p class="role-badge">DPS</p>
                 <p>Une soldate volante capable de bombarder ses ennemis depuis les airs.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('pharah-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="pharah-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Lance-roquettes</h4><p>Tire des roquettes explosives.</p></div>
+            <div class="ability-card"><h4>Réacteurs</h4><p>S'envole haut dans les airs.</p></div>
+            <div class="ability-card"><h4>Conflagration</h4><p>Tire une roquette qui repousse les ennemis.</p></div>
+            <div class="ability-card ult"><h4>Barrage</h4><p>Tire une salve continue de mini-roquettes.</p></div>
         </div>
     </article>
 
     <article id="reaper" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Reaper.png" alt="Reaper">
-            <div>
+            <div class="hero-info">
                 <h2>Reaper</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Un assassin mystérieux capable de se téléporter et de devenir intangible.</p>
+                <p class="role-badge">DPS</p>
+                <p>Un assassin fantomatique armé de fusils à pompe.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('reaper-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="reaper-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Pompes funèbres</h4><p>Doubles fusils à pompe dévastateurs de près.</p></div>
+            <div class="ability-card"><h4>Forme spectrale</h4><p>Devient invulnérable et se déplace plus vite.</p></div>
+            <div class="ability-card"><h4>Voie des ombres</h4><p>Se téléporte à l'endroit ciblé.</p></div>
+            <div class="ability-card ult"><h4>Éclosion mortelle</h4><p>Tire dans toutes les directions en tournant sur lui-même.</p></div>
         </div>
     </article>
 
     <article id="sojourn" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Sojourn.png" alt="Sojourn">
-            <div>
+            <div class="hero-info">
                 <h2>Sojourn</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Une soldate cybernétique spécialisée dans les attaques à distance.</p>
+                <p class="role-badge">DPS</p>
+                <p>Une commandante cybernétique avec un railgun ultra puissant.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('sojourn-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="sojourn-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Canon électrique</h4><p>Tirs rapides qui chargent un tir d'énergie.</p></div>
+            <div class="ability-card"><h4>Tacle</h4><p>Glisse au sol rapidement.</p></div>
+            <div class="ability-card"><h4>Tir disruptif</h4><p>Zone d'énergie qui ralentit et blesse les ennemis.</p></div>
+            <div class="ability-card ult"><h4>Surcadençage</h4><p>Le canon se charge automatiquement et traverse les ennemis.</p></div>
         </div>
     </article>
 
     <article id="soldat76" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Soldat76.png" alt="Soldier: 76">
-            <div>
-                    <h2>Soldier: 76</h2>
-                    <p><strong>Rôle :</strong> DPS</p>
-                    <p>Un vétéran de guerre utilisant des tactiques modernes pour combattre.</p>
-                </div>
+            <div class="hero-info">
+                <h2>Soldier: 76</h2>
+                <p class="role-badge">DPS</p>
+                <p>Un justicier équipé d'un arsenal militaire de pointe.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('soldier-abilities')">Voir les capacités</button>
             </div>
-        </article>
+        </div>
+        <div id="soldier-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Fusil lourd</h4><p>Arme automatique fiable.</p></div>
+            <div class="ability-card"><h4>Roquettes Helix</h4><p>Tire une salve de roquettes explosives.</p></div>
+            <div class="ability-card"><h4>Champ biotique</h4><p>Pose une zone de soin au sol.</p></div>
+            <div class="ability-card ult"><h4>Visière tactique</h4><p>Vise automatiquement les ennemis.</p></div>
+        </div>
+    </article>
 
     <article id="sombra" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Sombra.png" alt="Sombra">
-            <div>
+            <div class="hero-info">
                 <h2>Sombra</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Une hackeuse furtive capable de perturber les systèmes ennemis.</p>
+                <p class="role-badge">DPS</p>
+                <p>Une hackeuse d'élite capable de devenir invisible.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('sombra-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="sombra-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Piratage</h4><p>Empêche les ennemis d'utiliser leurs capacités.</p></div>
+            <div class="ability-card"><h4>Furtivité</h4><p>Devient invisible et court plus vite.</p></div>
+            <div class="ability-card"><h4>Translocateur</h4><p>Se téléporte instantanément à sa balise.</p></div>
+            <div class="ability-card ult"><h4>IEM</h4><p>Pirate tous les ennemis autour et détruit les boucliers.</p></div>
         </div>
     </article>
 
     <article id="symmetra" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Symmetra.png" alt="Symmetra">
-            <div>
+            <div class="hero-info">
                 <h2>Symmetra</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Une architecte utilisant la lumière pour créer des constructions défensives.</p>
+                <p class="role-badge">DPS</p>
+                <p>Une architecte utilisant la lumière solide pour construire des tourelles.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('sym-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="sym-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Projecteur à photons</h4><p>Rayon qui devient plus fort avec le temps.</p></div>
+            <div class="ability-card"><h4>Tourelles sentinelles</h4><p>Déploie des petites tourelles lasers.</p></div>
+            <div class="ability-card"><h4>Téléporteur</h4><p>Crée un portail pour l'équipe.</p></div>
+            <div class="ability-card ult"><h4>Écran photonique</h4><p>Mur géant qui traverse toute la carte.</p></div>
         </div>
     </article>
 
     <article id="torbjorn" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Torbjorn.png" alt="Torbjörn">
-            <div>
+            <div class="hero-info">
                 <h2>Torbjörn</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>Un ingénieur spécialisé dans la construction de tourelles défensives.</p>
+                <p class="role-badge">DPS</p>
+                <p>Un ingénieur nain qui construit des tourelles automatiques.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('torb-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="torb-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Pistolet à rivets</h4><p>Tire des rivets en cloche ou comme un fusil à pompe.</p></div>
+            <div class="ability-card"><h4>Déploiement de tourelle</h4><p>Construit une tourelle qui tire toute seule.</p></div>
+            <div class="ability-card"><h4>Surcharge</h4><p>Gagne de la vitesse, de l'armure et de la cadence de tir.</p></div>
+            <div class="ability-card ult"><h4>Cœur de magma</h4><p>Crache de la lave fondue sur le sol.</p></div>
         </div>
     </article>
 
     <article id="tracer" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Tracer.png" alt="Tracer">
-            <div>
+            <div class="hero-info">
                 <h2>Tracer</h2>
-                <p><strong>Rôle :</strong> DPS</p>
+                <p class="role-badge">DPS</p>
                 <p>Rapide et imprévisible, elle peut voyager dans le temps.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('tracer-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="tracer-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Pulseurs</h4><p>Pistolets automatiques à tir rapide.</p></div>
+            <div class="ability-card"><h4>Transfert</h4><p>Se téléporte instantanément sur une courte distance.</p></div>
+            <div class="ability-card"><h4>Rappel</h4><p>Revient quelques secondes dans le passé (position et santé).</p></div>
+            <div class="ability-card ult"><h4>Bombe à impulsion</h4><p>Lance une bombe collante dévastatrice.</p></div>
         </div>
     </article>
 
     <article id="venture" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Venture.png" alt="Venture">
-            <div>
+            <div class="hero-info">
                 <h2>Venture</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">DPS</p>
+                <p>Une archéologue intrépide qui creuse sous terre.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('venture-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="venture-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Excavateur</h4><p>Tire des charges explosives à courte portée.</p></div>
+            <div class="ability-card"><h4>Enfouissement</h4><p>Creuse sous terre et devient invulnérable.</p></div>
+            <div class="ability-card"><h4>Forage rapide</h4><p>Charge en avant avec sa foreuse.</p></div>
+            <div class="ability-card ult"><h4>Secousse sismique</h4><p>Envoie des ondes de choc au sol.</p></div>
         </div>
     </article>
 
     <article id="widowmaker" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Widowmaker.png" alt="Widowmaker">
-            <div>
+            <div class="hero-info">
                 <h2>Widowmaker</h2>
-                <p><strong>Rôle :</strong> DPS</p>
+                <p class="role-badge">DPS</p>
                 <p>Une tireuse d’élite froide et calculatrice, experte en éliminations à distance.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('widow-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="widow-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Baiser de la veuve</h4><p>Fusil de sniper polyvalent (lunette ou automatique).</p></div>
+            <div class="ability-card"><h4>Grappin</h4><p>Permet d'atteindre des positions élevées.</p></div>
+            <div class="ability-card"><h4>Mine venimeuse</h4><p>Une mine qui empoisonne les ennemis proches.</p></div>
+            <div class="ability-card ult"><h4>Infravision</h4><p>Révèle la position de tous les ennemis à son équipe.</p></div>
         </div>
     </article>
 
     <article id="anran" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Anran.png" alt="Anran">
-            <div>
+            <div class="hero-info">
                 <h2>Anran</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">DPS</p>
+                <p>Combattante agile avec des capacités de feu.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('anran-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="anran-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Eventails du Zhuque</h4><p>Lance des projectiles enflammés.</p></div>
+            <div class="ability-card"><h4>Flambée ondoyante</h4><p>Frappe les adversaires à portée en esquivant les dégats.</p></div>
+            <div class="ability-card"><h4>Ruée ardente</h4><p>Propulse en avant et inflige des dégats aux ennemis touchés.</p></div>
+            <div class="ability-card ult"><h4>Ascension/Résurrection vermillon</h4><p>Charge en avant infligeant beaucoup de dégats, ou résurection.</p></div>
         </div>
     </article>
 
     <article id="emre" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Emre.png" alt="Emre">
-            <div>
+            <div class="hero-info">
                 <h2>Emre</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">DPS</p>
+                <p>Soldat tactique spécialisé dans l'assaut.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('emre-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="emre-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Fusil à rafales</h4><p>Tire des rafales de trois balles.</p></div>
+            <div class="ability-card"><h4>Cybergrenade</h4><p>Lance une grenade collante.</p></div>
+            <div class="ability-card"><h4>Organes altérés</h4><p>Régénération passive améliorée.</p></div>
+            <div class="ability-card ult"><h4>Protocole de remplacement</h4><p>Transforme en arme vivante.</p></div>
         </div>
     </article>
 
     <article id="freja" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Freja.png" alt="Freja">
-            <div>
+            <div class="hero-info">
                 <h2>Freja</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">DPS</p>
+                <p>Guerrière nordique se battant à l'arbalète.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('freja-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="freja-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Corant ascendant</h4><p>Propulsion en l'air grâce au vent.</p></div>
+            <div class="ability-card"><h4>Ruée rapide</h4><p>Bond en avant.</p></div>
+            <div class="ability-card"><h4>Dans le mille</h4><p>Tire une flèche explosive.</p></div>
+            <div class="ability-card ult"><h4>Tir de bolas</h4><p>Lance des bolas explosifs attirant les ennemis.</p></div>
         </div>
     </article>
 
     <article id="vendetta" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Vendetta.png" alt="Vendetta">
-            <div>
+            <div class="hero-info">
                 <h2>Vendetta</h2>
-                <p><strong>Rôle :</strong> DPS</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">DPS</p>
+                <p>Guerrière impitoyable et nouvelle cheffe de Talon.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('vendetta-abilities')">Voir les capacités</button>
             </div>
         </div>
+        <div id="vendetta-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Crocs palatins</h4><p>Enchaîne des attaques dévastatrices avec une énorme épée.</p></div>
+            <div class="ability-card"><h4>Posture défensive</h4><p>Bloque les attaques en se protégeant avec l'épée.</p></div>
+            <div class="ability-card"><h4>Entaille fulgurante</h4><p>Lance son épée vers l'avant puis vole jusqu'à elle.</p></div>
+            <div class="ability-card ult"><h4>Equarrisseuse</h4><p>Assène un grand coup d'épée dévastateur.</p></div>
+        </div>
     </article>
-
-    <!-- ================= SUPPORT ================= -->
 
     <article id="ana" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Ana.png" alt="Ana">
-            <div>
+            <div class="hero-info">
                 <h2>Ana</h2>
-                <p><strong>Rôle :</strong> Support</p>
+                <p class="role-badge">SUPPORT</p>
                 <p>Une tireuse d’élite soignant ses alliés à distance.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('ana-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="ana-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Fusil biotique</h4><p>Soigne les alliés et blesse les ennemis.</p></div>
+            <div class="ability-card"><h4>Fléchette hypodermique</h4><p>Endort un ennemi pendant quelques secondes.</p></div>
+            <div class="ability-card"><h4>Grenade biotique</h4><p>Booste les soins sur les alliés et empêche les ennemis de se soigner.</p></div>
+            <div class="ability-card ult"><h4>Nanoboost</h4><p>Booste la puissance et la résistance d'un allié.</p></div>
         </div>
     </article>
 
     <article id="baptiste" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Baptiste.png" alt="Baptiste">
-            <div>
+            <div class="hero-info">
                 <h2>Baptiste</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>Un médecin de combat utilisant des technologies avancées pour soigner et protéger.</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Un médecin de combat équipé d'un lance-grenades biotique.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('bap-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="bap-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Biocanardière</h4><p>Tire en rafale et lance des grenades de soin.</p></div>
+            <div class="ability-card"><h4>Salve régénérante</h4><p>Soigne Baptiste et les alliés proches.</p></div>
+            <div class="ability-card"><h4>Champ d'immortalité</h4><p>Empêche les alliés de mourir dans la zone.</p></div>
+            <div class="ability-card ult"><h4>Matrice amplificatrice</h4><p>Double les dégâts et les soins qui passent au travers.</p></div>
         </div>
     </article>
 
     <article id="brigitte" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Brigitte.png" alt="Brigitte">
-            <div>
+            <div class="hero-info">
                 <h2>Brigitte</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>Une ingénieure combattante qui protège ses alliés avec son bouclier et sa massue.</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Une écuyère en armure qui soigne en frappant les ennemis.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('brig-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="brig-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Fléau à réaction</h4><p>Frappe au corps à corps et soigne les alliés proches.</p></div>
+            <div class="ability-card"><h4>Module de réparation</h4><p>Envoie un pack de soin à un allié.</p></div>
+            <div class="ability-card"><h4>Bouclier</h4><p>Déploie un petit bouclier personnel.</p></div>
+            <div class="ability-card ult"><h4>Ralliement</h4><p>Donne de l'armure et un gros bouclier à Brigitte.</p></div>
         </div>
     </article>
 
     <article id="illari" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Illari.png" alt="Illari">
-            <div>
+            <div class="hero-info">
                 <h2>Illari</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Une guerrière solaire qui utilise la lumière pour soigner et détruire.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('illari-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="illari-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Fusil solaire</h4><p>Tire des rayons d'énergie et un rayon soigneur.</p></div>
+            <div class="ability-card"><h4>Pylône de soin</h4><p>Pose une tourelle qui soigne automatiquement.</p></div>
+            <div class="ability-card"><h4>Éruption</h4><p>Repousse les ennemis et propulse Illari.</p></div>
+            <div class="ability-card ult"><h4>Soleil captif</h4><p>Tire une boule explosive qui ralentit les ennemis.</p></div>
         </div>
     </article>
 
     <article id="juno" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Juno.png" alt="Juno">
-            <div>
+            <div class="hero-info">
                 <h2>Juno</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Une astronaute martienne très mobile.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('juno-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="juno-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Médiblaster</h4><p>Tire des rafales qui soignent ou blessent.</p></div>
+            <div class="ability-card"><h4>Torpilles à pulsars</h4><p>Verrouille les cibles pour soigner ou attaquer.</p></div>
+            <div class="ability-card"><h4>Anneau hypervitesse</h4><p>Portail qui accélère l'équipe.</p></div>
+            <div class="ability-card ult"><h4>Rayon orbital</h4><p>Gros rayon venu du ciel qui soigne et booste les dégâts.</p></div>
         </div>
     </article>
 
     <article id="kiriko" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Kiriko.png" alt="Kiriko">
-            <div>
+            <div class="hero-info">
                 <h2>Kiriko</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Une protectrice utilisant des talismans et la téléportation.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('kiriko-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="kiriko-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Ofuda de soin</h4><p>Envoie des talismans qui soignent les alliés.</p></div>
+            <div class="ability-card"><h4>Kunai</h4><p>Lance un projectile critique.</p></div>
+            <div class="ability-card"><h4>Suzu de protection</h4><p>Rend les alliés invulnérables brièvement et purifie les effets.</p></div>
+            <div class="ability-card ult"><h4>Ruée de Kitsune</h4><p>Invoque un esprit renard qui accélère l'équipe.</p></div>
         </div>
     </article>
 
     <article id="lifeweaver" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Lifeweaver.png" alt="Lifeweaver">
-            <div>
+            <div class="hero-info">
                 <h2>Lifeweaver</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Un scientifique utilisant la biolumière pour repositionner ses alliés.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('lw-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="lw-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Fleur de soin</h4><p>Charge une fleur pour soigner un allié.</p></div>
+            <div class="ability-card"><h4>Plateforme de pétales</h4><p>Crée un ascenseur quand on marche dessus.</p></div>
+            <div class="ability-card"><h4>Emprise vitale</h4><p>Attire un allié vers lui et le protège.</p></div>
+            <div class="ability-card ult"><h4>Arbre de vie</h4><p>Plante un arbre géant qui soigne l'équipe par vagues.</p></div>
         </div>
     </article>
 
     <article id="lucio" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Lucio.png" alt="Lucio">
-            <div>
+            <div class="hero-info">
                 <h2>Lúcio</h2>
-                <p><strong>Rôle :</strong> Support</p>
+                <p class="role-badge">SUPPORT</p>
                 <p>Un DJ combattant qui soigne son équipe grâce à la musique.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('lucio-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="lucio-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Ampli</h4><p>Projette des ondes sonores.</p></div>
+            <div class="ability-card"><h4>Crossfade</h4><p>Change de musique : Soin de zone ou Vitesse de déplacement.</p></div>
+            <div class="ability-card"><h4>Volume max</h4><p>Amplifie l'effet de la musique actuelle.</p></div>
+            <div class="ability-card ult"><h4>Mur de son</h4><p>Donne un énorme bouclier temporaire aux alliés proches.</p></div>
         </div>
     </article>
 
     <article id="mercy" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Mercy.png" alt="Mercy">
-            <div>
+            <div class="hero-info">
                 <h2>Mercy</h2>
-                <p><strong>Rôle :</strong> Support</p>
+                <p class="role-badge">SUPPORT</p>
                 <p>Une médecin dévouée capable de soigner et ressusciter ses alliés.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('mercy-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="mercy-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Caducée</h4><p>Rayon qui soigne ou augmente les dégâts d'un allié.</p></div>
+            <div class="ability-card"><h4>Ange gardien</h4><p>Vole rapidement vers un allié ciblé.</p></div>
+            <div class="ability-card"><h4>Résurrection</h4><p>Ramène un allié mort à la vie.</p></div>
+            <div class="ability-card ult"><h4>Valkyrie</h4><p>Améliore toutes ses capacités et lui permet de voler librement.</p></div>
         </div>
     </article>
 
     <article id="moira" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Moira.png" alt="Moira">
-            <div>
+            <div class="hero-info">
                 <h2>Moira</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>Une scientifique génétiquement modifiée capable de soigner et d’infliger des dégâts.</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Une généticienne qui draine la vie des ennemis pour soigner ses alliés.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('moira-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="moira-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Emprise biotique</h4><p>Soigne en spray ou draine la vie en rayon.</p></div>
+            <div class="ability-card"><h4>Orbe biotique</h4><p>Lance une boule qui rebondit (Soin ou Dégâts).</p></div>
+            <div class="ability-card"><h4>Volatilité</h4><p>Disparaît et devient invulnérable brièvement.</p></div>
+            <div class="ability-card ult"><h4>Coalescence</h4><p>Tire un rayon géant qui soigne et blesse en même temps.</p></div>
         </div>
     </article>
 
     <article id="zenyatta" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Zenyatta.png" alt="Zenyatta">
-            <div>
+            <div class="hero-info">
                 <h2>Zenyatta</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>Un moine omnique qui équilibre les forces de l’univers pour soigner et renforcer ses alliés.</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Un moine omnique qui équilibre les forces de l’univers.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('zen-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="zen-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Orbes de destruction</h4><p>Lance des orbes d'énergie.</p></div>
+            <div class="ability-card"><h4>Orbe d'harmonie</h4><p>Soigne un allié tant qu'il reste en vue.</p></div>
+            <div class="ability-card"><h4>Orbe de discorde</h4><p>Augmente les dégâts subis par un ennemi.</p></div>
+            <div class="ability-card ult"><h4>Transcendance</h4><p>Devient invulnérable et soigne massivement les alliés autour.</p></div>
         </div>
     </article>
 
     <article id="jetpack_cat" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Jetpack_cat.png" alt="Jetpack Cat">
-            <div>
+            <div class="hero-info">
                 <h2>Jetpack Cat</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Un chat équipé d'un jetpack et de gadgets.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('cat-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="cat-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Coussinets biotiques</h4><p>Volée de projectiles qui soigne les alliés et blesse les ennemis.</p></div>
+            <div class="ability-card"><h4>Jetpack</h4><p>Vol constant.</p></div>
+            <div class="ability-card"><h4>Soutien aéroporté</h4><p>Transporte un allié.</p></div>
+            <div class="ability-card ult"><h4>Chat perché</h4><p>Plonge sur le sol en attrapant un ennemi touché.</p></div>
         </div>
     </article>
 
     <article id="mizuki" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Mizuki.png" alt="Mizuki">
-            <div>
+            <div class="hero-info">
                 <h2>Mizuki</h2>
-                <p><strong>Rôle :</strong> Support</p>
-                <p>blah blah blah</p>
+                <p class="role-badge">SUPPORT</p>
+                <p>Ninja jettant son chapeau pour soigner ses alliés.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('mizuki-abilities')">Voir les capacités</button>
             </div>
+        </div>
+        <div id="mizuki-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Glaive spirituel</h4><p>Lance une lame tournoyante qui inflige des dégats rapidement.</p></div>
+            <div class="ability-card"><h4>Kasa guérisseur</h4><p>Lance son chapeau guérissant en rebondissant sur ses alliés.</p></div>
+            <div class="ability-card"><h4>Entrave spirituelle</h4><p>Enchaîne la première cible touchée.</p></div>
+            <div class="ability-card ult"><h4>Sanctuaire kekkai</h4><p>Crée un sanctuaire qui soigne les alliés et absorbe les projectiles adverses.</p></div>
         </div>
     </article>
 
     <article id="wuyang" class="hero-detail-section">
         <div class="hero-flex">
             <img src="../media/Wuyang.png" alt="Wuyang">
-                <div>
-                    <h2>Wuyang</h2>
-                    <p><strong>Rôle :</strong> Support</p>
-                    <p>blah blah blah</p>
-                    </div>
+            <div class="hero-info">
+                <h2>Wuyang</h2>
+                <p class="role-badge">SUPPORT</p>
+                <p>Maître des arts martiaux et de la guérison.</p>
+                <button class="ability-toggle" onclick="toggleAbilities('wuyang-abilities')">Voir les capacités</button>
+            </div>
+        </div>
+        <div id="wuyang-abilities" class="abilities-panel" style="display: none;">
+            <div class="ability-card"><h4>Capacité 1</h4><p>Description à venir.</p></div>
+            <div class="ability-card"><h4>Capacité 2</h4><p>Description à venir.</p></div>
+            <div class="ability-card"><h4>Capacité 3</h4><p>Description à venir.</p></div>
+            <div class="ability-card ult"><h4>Ultime</h4><p>Description de l'ultime.</p></div>
         </div>
     </article>
 
@@ -596,9 +945,9 @@
         <img src="../media/Facebook.png" alt="Logo de facebook">
         <img src="../media/Twitter.png" alt="Logo de twitter">
     </section>
-    <section id="footer-column-one"><p>Lien utile 1</p></section>
-    <section id="footer-column-two"><p>Lien utile 2</p></section>
-    <section id="footer-column-three"><p>Lien utile 3</p></section>
+    <section id="footer-column-one"><p>Mentions légales</p></section>
+    <section id="footer-column-two"><p>Contact</p></section>
+    <section id="footer-column-three"><p>Support</p></section>
 </footer>
 
 </body>
