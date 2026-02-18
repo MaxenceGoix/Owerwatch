@@ -348,15 +348,14 @@ video {
 
 #Tank, #DPS, #Support {
     display: flex;
-    flex-wrap: wrap;       /* Permet aux images de passer à la ligne */
-    justify-content: center; /* Centre les images au milieu de l'écran */
-    gap: 15px;             /* Petit espace entre les images */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     padding: 20px;
 }
 
-/* Style des titres de section (Tank, DPS...) */
 #Tank h2, #DPS h2, #Support h2 {
-    width: 100%;           /* Le titre prend toute la largeur */
+    width: 100%;
     text-align: center;
     color: #28354f;
     font-size: 2rem;
@@ -364,15 +363,14 @@ video {
     border-bottom: 3px solid #f99e1a;
 }
 
-/* Style des images (Les icônes cliquables) */
 #Tank img, #DPS img, #Support img {
-    width: 110px;          /* Taille FIXE petite */
-    height: 110px;         /* Taille FIXE petite */
-    object-fit: cover;     /* L'image remplit le carré sans s'écraser */
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
     border-radius: 15px;
     border: 3px solid white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Petite ombre */
-    transition: transform 0.2s, border-color 0.2s; /* Animation fluide au survol */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s, border-color 0.2s;
 }
 
 #Tank img:hover, #DPS img:hover, #Support img:hover {
@@ -467,6 +465,234 @@ video {
 .product-item:hover { border-color: #f99e1a; }
 .price { font-size: 20px; font-weight: bold; color: #00c3ff; margin-top: 10px; }
 
+/* ================= STYLE BOUTIQUE ================= */
+
+.shop-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #28354f 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    margin: 0 auto 50px auto;
+    max-width: 1200px;
+    border: 3px solid #f99e1a;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(249, 158, 26, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+    padding-right: 20px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    color: white;
+    margin: 20px 0;
+    font-style: italic;
+    border: none;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.hero-content p {
+    color: #ccc;
+    font-size: 1.2rem;
+}
+
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-visual img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+/* Prix (Arnaque) */
+.price-container {
+    margin: 25px 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.new-price {
+    color: #f99e1a;
+    text-shadow: 0 0 10px rgba(249, 158, 26, 0.5);
+}
+
+.shop-btn-large {
+    display: inline-block;
+    background-color: #f99e1a;
+    color: #28354f;
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transform: skewX(-15deg);
+    transition: 0.3s;
+}
+
+.shop-btn-large:hover {
+    background-color: white;
+    box-shadow: 0 0 20px #f99e1a;
+    transform: skewX(-15deg) scale(1.05);
+}
+
+.badge-mythic {
+    background: linear-gradient(90deg, #00c3ff, #ff00de);
+    color: white;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.6);
+}
+
+/* --- GRILLE PRODUITS --- */
+.shop-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.shop-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Couleurs de rareté (Bordure du haut) */
+.rarity-mythic { border-top: 6px solid #ff00de; }
+.rarity-legendary { border-top: 6px solid #f99e1a; }
+.rarity-epic { border-top: 6px solid #a335ee; }
+.rarity-common { border-top: 6px solid #ccc; }
+
+/* Images dans les cartes */
+.card-img-container {
+    height: 200px;
+    background-color: #f0f6f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-img-container img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.shop-card:hover .card-img-container img {
+    transform: scale(1.1);
+}
+
+/* Infos produit */
+.card-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    color: #28354f;
+    border: none;
+}
+
+.rarity-text {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-style: italic;
+}
+
+.price-row .price {
+    font-size: 1.4rem;
+    color: #28354f;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* Bouton Acheter petit */
+.shop-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #00c3ff;
+    color: white;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.shop-btn:hover {
+    background-color: #28354f;
+}
+
+/* Badge de Solde */
+.sale-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff0055;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    z-index: 10;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .shop-hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+    .hero-content { padding-right: 0; }
+    .hero-visual { margin-top: 30px; }
+}
+
 /* ================= FOOTER ================= */
 footer {
     background-color: #28354f;
@@ -557,7 +783,6 @@ footer p {
         text-align: center;
     }
     
-    /* Fiches Héros : Passe en vertical */
     .hero-flex {
         flex-direction: column;
         text-align: center;

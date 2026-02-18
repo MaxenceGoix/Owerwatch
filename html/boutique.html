@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique - OW Site</title>
+    <title>Boutique</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -11,79 +11,130 @@
     <header>
         <nav>
             <ul class="menu-flex">
-                <li class="logo-item"><a href="index.html"><img src="../media/Logo.png" alt="Logo"></a></li>
-    
+                <li class="logo-item"><a href="index.html"><img src="../media/Overwatch.png" alt="Logo"></a></li>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="apropos.html">Infos</a></li>
                 <li><a href="heros.html">Heros</a></li>
                 <li><a href="boutique.html">Boutique</a></li>
-    
                 <li class="connexion"><a href="#">Sign in</a></li>
                 <li class="connexion"><a href="#">Sign up</a></li>
             </ul>
         </nav>
-        <h1>Boutique</h1>
+        <h1>Boutique en Ligne</h1>
     </header>
 
-    <section id="shop-grid">
-        
-        <div class="product-item">
-            <p class="price">0.01$</p>
-        </div>
+    <main>
+        <section class="shop-hero">
+            <div class="hero-content">
+                <span class="badge-mythic">OFFRE POPULAIRE</span>
+                <h2>PASSE DE COMBAT ULTIME</h2>
+                <p>Débloquez le skin Mythique "Carburant Cyber" pour Chacal et 80 niveaux de récompenses !</p>
+                <div class="price-container">
+                    <span class="old-price">50.00 $</span>
+                    <span class="new-price">60.00 $</span>
+                </div>
+                <a href="#" class="shop-btn-large">ACHETER MAINTENANT</a>
+            </div>
+            <div class="hero-visual">
+                <img src="../media/Logo.png" alt="Battle Pass">
+            </div>
+        </section>
 
-        <div class="product-item">
-            <p class="price">3000,99$</p>
-        </div>
+        <section class="shop-container">
+            <h2>Skins en Vedette</h2>
+            
+            <div class="shop-grid">
+                
+                <div class="shop-card rarity-mythic">
+                    <div class="card-img-container">
+                        <img src="../media/Logo.png" alt="Skin Mythique">
+                    </div>
+                    <div class="card-info">
+                        <h3>Skin incroyablement beau</h3>
+                        <p class="rarity-text">Mythique</p>
+                        <div class="price-row">
+                            <span class="price">199.99 $</span>
+                        </div>
+                        <button class="shop-btn">Acheter</button>
+                    </div>
+                </div>
 
-        <div class="product-item">
-            <p class="price">2999999999.99$</p>
-        </div>
+                <div class="shop-card rarity-legendary">
+                    <span class="sale-badge">-50%</span>
+                    <div class="card-img-container">
+                        <img src="../media/Logo.png" alt="Skin Legendaire">
+                    </div>
+                    <div class="card-info">
+                        <h3>Autre skin très beau</h3>
+                        <p class="rarity-text">Légendaire</p>
+                        <div class="price-row">
+                            <span class="old-price">49.99 $</span>
+                            <span class="price">24.99 $</span>
+                        </div>
+                        <button class="shop-btn">Acheter</button>
+                    </div>
+                </div>
 
-        <div class="product-item">
-            <p class="price">12333$</p>
-        </div>
+                <div class="shop-card rarity-epic">
+                    <div class="card-img-container">
+                        <img src="../media/Skin_Reinhardt.png" alt="Reinhardt Carton">
+                    </div>
+                    <div class="card-info">
+                        <h3>Reinhardt Carton</h3>
+                        <p class="rarity-text">Épique</p>
+                        <div class="price-row">
+                            <span class="price">14.99 $</span>
+                        </div>
+                        <button class="shop-btn">Acheter</button>
+                    </div>
+                </div>
 
-        <div class="product-item">
-            <p class="price">999999999999$</p>
-        </div>
+                <div class="shop-card rarity-common">
+                    <div class="card-img-container">
+                        <img src="../media/Tag_GG.png" alt="Tag GG">
+                    </div>
+                    <div class="card-info">
+                        <h3>Tag "Bien joué"</h3>
+                        <p class="rarity-text">Commun</p>
+                        <div class="price-row">
+                            <span class="price">0.01 $</span>
+                        </div>
+                        <button class="shop-btn">Acheter</button>
+                    </div>
+                </div>
 
-        <div class="product-item">
-            <p class="price">1£</p>
-        </div>
+                 <div class="shop-card rarity-legendary">
+                    <span class="sale-badge">NOUVEAU</span>
+                    <div class="card-img-container">
+                        <img src="../media/Logo.png" alt="Pay To Win">
+                    </div>
+                    <div class="card-info">
+                        <h3>Pack "Pay To Win"</h3>
+                        <p class="rarity-text">Légendaire</p>
+                        <div class="price-row">
+                            <span class="price">69.99 $</span>
+                        </div>
+                        <button class="shop-btn">Acheter</button>
+                    </div>
+                </div>
 
-        <div class="product-item special-offer">
-            <h2>Offre exclusive!</h2>
-            <p class="price">3000000000000000000$</p>
-        </div>
-
-    </section>
+            </div>
+        </section>
+    </main>
 
     <footer>
-    <img src="../media/Overwatch.png" alt="Logo Overwatch">
-    
-    <section id="footer-partie-gauche">
-        <p>© 2024 Cours Complet Web.</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/playoverwatch/"><img src="../media/Instagram.png" alt="Instagram"></a>
-            <a href="https://www.facebook.com/OverwatchEU/"><img src="../media/Facebook.png" alt="Facebook"></a>
-            <a href="https://x.com/PlayOverwatch"><img src="../media/Twitter.png" alt="Twitter"></a> <!-- Non, on n'appellera pas Twitter X-->
-        </div>
-    </section>
-
-    <section>
-        <p>Mentions Légales</p>     
-        <p>Confidentialité</p>
-    </section>
-    
-    <section>
-        <p>Support</p>     
-        <p>Contact</p>
-    </section>
-    
-    <section>
-        <p>Carrières</p>     
-        <p>Presse</p>
-    </section>
-</footer>
+        <img src="../media/Overwatch.png" alt="Logo Overwatch">
+        <section id="footer-partie-gauche">
+            <p>© 2024 Cours Complet Web.</p>
+            <div class="social-icons">
+                <a href="#"><img src="../media/Instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="../media/Facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../media/Twitter.png" alt="Twitter"></a>
+            </div>
+        </section>
+        <section><p>Mentions Légales</p></section>
+        <section><p>Support</p></section>
+        <section><p>Presse</p></section>
+    </footer>
 </body>
 </html>
